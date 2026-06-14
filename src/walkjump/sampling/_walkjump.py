@@ -160,18 +160,18 @@ def walkjump(
     # bring the seed_tensor to the "Y manifold"
     seed_tensor = stack_seed_sequences([seed] if isinstance(seed, str) else seed, num_samples,alphabet)
 
-    #dataset = pd.read_csv("/home/srinu_pd/walk-jump-poas/data/poas_with_sigma_0.4to0.6.csv.gz", compression="gzip")
-    #train_sigmas = dataset[dataset.partition == "train"].sigma
+    dataset = pd.read_csv("/home/srinu_pd/walk-jump-poas/data/poas_with_sigma_0.4to0.6.csv.gz", compression="gzip")
+    train_sigmas = dataset[dataset.partition == "train"].sigma
     
     #dataset = pd.read_csv("/data0/srinu_pd/walk-jump/sigma_ranges/HER2_full_with_sigma_0.4to0.5.csv")
-    dataset = pd.read_csv("/data0/srinu_pd/walk-jump/data/CoV_with_sigma_0.4to0.6.csv")
-    train_sigmas = dataset[dataset.split == "train"].sigma
+    #dataset = pd.read_csv("/data0/srinu_pd/walk-jump/data/CoV_with_sigma_0.4to0.6.csv")
+    #train_sigmas = dataset[dataset.split == "train"].sigma
     #train_sigmas = train_sigmas[train_sigmas.AgClass==1].sigma
     #print(train_sigmas.shape)
     
     
-    #sigmas = np.random.choice(train_sigmas, size=seed_tensor.shape[0], replace=True)
-    #model.sigma = torch.tensor(sigmas, dtype=torch.float32, device=model.device).view(-1, 1, 1)
+    sigmas = np.random.choice(train_sigmas, size=seed_tensor.shape[0], replace=True)
+    model.sigma = torch.tensor(sigmas, dtype=torch.float32, device=model.device).view(-1, 1, 1)
     #model.sigma =  torch.tensor(np.random.uniform(0.4,0.6, size=seed_tensor.shape[0]), dtype=torch.float32, device=model.device).view(-1, 1, 1)
 
     #print(model.sigma.shape)
