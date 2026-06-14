@@ -1,0 +1,68 @@
+defaults:
+    - _self_
+    - setup: default
+
+model:
+  _target_: walkjump.cmdline.utils.instantiate_model_for_sample_mode
+  sample_mode_model_cfg:
+    model_type: denoise
+    #checkpoint_path: /home/srinu_pd/gg-dWJS/checkpoints/her_score/last.ckpt
+    #checkpoint_path: /data0/srinu_pd/walk-jump/checkpoints/checkpoints_kde_random_0.4to0.6_amp/last.ckpt #checkpoints_kde_full_0.4to0.6_her2/last.ckpt
+    checkpoint_path: /data0/srinu_pd/walk-jump/checkpoints/checkpoints_0.5_cov/last.ckpt
+    denoise_path: null
+langevin:
+  sigma: 1.0
+  delta: 0.5
+  lipschitz: 1.0
+  friction: 1.0
+  steps: 50
+
+#Cov
+designs:
+  output_csv: samples_cov_0.5_10k.csv
+  redesign_regions: null
+  seeds: denovo
+  num_samples: 100
+  limit_seeds: 100
+  chunksize: 1
+  num_tokens: 21
+  length: 260
+
+#POAS
+# designs:
+#   output_csv: samples_0.5_10k_new.csv
+#   redesign_regions: null
+#   seeds: denovo
+#   num_samples: 100
+#   limit_seeds: 100
+#   chunksize: 1
+#   num_tokens: 21
+#   length: 297
+
+
+#HER2
+# designs:
+#   chunksize: 1
+#   num_tokens: 21
+#   length: 10
+#   output_csv: samples_her2_ours_0.4to0.5.csv
+#   redesign_regions: null
+#   seeds: denovo
+#   num_samples: 100
+#   limit_seeds: 5
+
+
+#AMP
+# designs:
+#   chunksize: 1
+#   num_tokens: 21
+#   length: 60
+#   output_csv: samples_amp_ours_0.3to1.0.csv
+#   redesign_regions: null
+#   seeds: denovo
+#   num_samples: 100
+#   limit_seeds: 5
+
+
+device: null
+dryrun: false

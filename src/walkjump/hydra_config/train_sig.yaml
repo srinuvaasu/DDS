@@ -1,0 +1,24 @@
+# defaults:
+#   - _self_
+#   - data: poas.yaml
+#   - model: denoise.yaml
+#   - callbacks: default.yaml
+#   - logger: wandb.yaml
+#   - trainer: default.yaml
+#   - setup: default.yaml
+
+# dryrun: false
+
+defaults:
+  - _self_
+  - data: disc_2d_uni.yaml
+  #- model: noise_ebm_toy.yaml 
+  #- model: denoise_toy.yaml
+  - model: pred_sigma.yaml
+  - callbacks: default.yaml
+  - logger: wandb.yaml
+  - trainer: default.yaml
+  - setup: default.yaml
+
+dryrun: false
+

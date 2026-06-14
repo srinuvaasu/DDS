@@ -1,0 +1,35 @@
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_setup.py:_flush():79] Current SDK version is 0.18.7
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_setup.py:_flush():79] Configure stats pid to 3778359
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_setup.py:_flush():79] Loading settings from /home/srinu_pd/.config/wandb/settings
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_setup.py:_flush():79] Loading settings from /home/srinu_pd/walk-jump/src/walkjump/wandb/settings
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2025-04-30 14:23:37,327 WARNING MainThread:3778359 [wandb_setup.py:_flush():79] Could not save program above cwd: /home/srinu_pd/my_env/bin/walkjump_train
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': None, 'program_abspath': '/home/srinu_pd/my_env/bin/walkjump_train', 'program': '/home/srinu_pd/my_env/bin/walkjump_train'}
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_setup.py:_flush():79] Applying login settings: {'mode': 'offline'}
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_init.py:_log_setup():533] Logging user logs to ./wandb/offline-run-20250430_142337-dh3fj9p1/logs/debug.log
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_init.py:_log_setup():534] Logging internal logs to ./wandb/offline-run-20250430_142337-dh3fj9p1/logs/debug-internal.log
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_init.py:init():619] calling init triggers
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {}
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_init.py:init():669] starting backend
+2025-04-30 14:23:37,327 INFO    MainThread:3778359 [wandb_init.py:init():673] sending inform_init request
+2025-04-30 14:23:37,328 INFO    MainThread:3778359 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-30 14:23:37,329 INFO    MainThread:3778359 [wandb_init.py:init():686] backend started and connected
+2025-04-30 14:23:37,331 INFO    MainThread:3778359 [wandb_init.py:init():781] updated telemetry
+2025-04-30 14:23:37,334 INFO    MainThread:3778359 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2025-04-30 14:23:37,555 INFO    MainThread:3778359 [wandb_init.py:init():867] starting run threads in backend
+2025-04-30 14:23:37,690 INFO    MainThread:3778359 [wandb_run.py:_console_start():2456] atexit reg
+2025-04-30 14:23:37,690 INFO    MainThread:3778359 [wandb_run.py:_redirect():2305] redirect: wrap_raw
+2025-04-30 14:23:37,690 INFO    MainThread:3778359 [wandb_run.py:_redirect():2370] Wrapping output streams.
+2025-04-30 14:23:37,690 INFO    MainThread:3778359 [wandb_run.py:_redirect():2395] Redirects installed.
+2025-04-30 14:23:37,691 INFO    MainThread:3778359 [wandb_init.py:init():911] run started, returning control to user process
+2025-04-30 14:23:37,774 INFO    MainThread:3778359 [wandb_run.py:_config_callback():1387] config_cb None None {'cfg': {'dryrun': False, 'data': {'_target_': 'walkjump.data.AbDataModule', 'csv_data_path': '/home/srinu_pd/walk-jump/data/poas.csv.gz', 'batch_size': 64, 'num_workers': 1}, 'model': {'model_cfg': {'arch': {'_target_': 'walkjump.model.arch.ByteNetArch', 'n_tokens': 21, 'd_model': 128, 'n_layers': 35, 'kernel_size': 3, 'max_dilation': 128, 'slim': True, 'activation': 'silu', 'final_layernorm': True}, 'hyperparameters': {'lr': 0.0001, 'weight_decay': 0.01, 'sigma': 1.0, 'warmup_batches': 1, 'lr_start_factor': 0.1}}, '_target_': 'walkjump.model.DenoiseModel'}, 'callbacks': {'model_checkpoint': {'_target_': 'lightning.pytorch.callbacks.ModelCheckpoint', 'dirpath': 'checkpoints', 'filename': '{epoch}-{step}-{val_loss:.4f}', 'monitor': 'val_loss', 'save_top_k': -1, 'mode': 'min', 'verbose': True, 'save_last': True}, 'early_stopping': {'_target_': 'lightning.pytorch.callbacks.EarlyStopping', 'monitor': 'val_loss', 'min_delta': 0, 'patience': 3, 'mode': 'min'}, 'lr_monitor': {'_target_': 'lightning.pytorch.callbacks.LearningRateMonitor', 'logging_interval': 'step'}}, 'logger': {'_target_': 'lightning.pytorch.loggers.WandbLogger', 'save_dir': '.', 'offline': False, 'project': None, 'entity': None, 'group': None, 'notes': None, 'tags': None}, 'trainer': {'_target_': 'lightning.pytorch.Trainer', 'accelerator': 'gpu', 'devices': 1, 'num_nodes': 1, 'accumulate_grad_batches': 1, 'gradient_clip_val': 0.0, 'gradient_clip_algorithm': 'norm', 'precision': 32, 'max_epochs': 100, 'max_steps': -1, 'val_check_interval': 0.99}, 'setup': {'torch': {'_target_': 'torch.set_float32_matmul_precision', 'precision': 'medium'}, 'seed': {'_target_': 'lightning.pytorch.seed_everything', 'seed': 15855310, 'workers': True}}}}
+2025-04-30 14:23:43,590 INFO    MainThread:3778359 [wandb_run.py:_config_callback():1387] config_cb None None {}
+2025-04-30 14:23:48,356 INFO    MainThread:3778359 [wandb_run.py:_finish():2155] finishing run walk-jump/dh3fj9p1
+2025-04-30 14:23:48,357 INFO    MainThread:3778359 [wandb_run.py:_atexit_cleanup():2420] got exitcode: 0
+2025-04-30 14:23:48,357 INFO    MainThread:3778359 [wandb_run.py:_restore():2402] restore
+2025-04-30 14:23:48,357 INFO    MainThread:3778359 [wandb_run.py:_restore():2408] restore done
+2025-04-30 14:23:49,363 INFO    MainThread:3778359 [wandb_run.py:_footer_history_summary_info():3960] rendering history
+2025-04-30 14:23:49,364 INFO    MainThread:3778359 [wandb_run.py:_footer_history_summary_info():3992] rendering summary

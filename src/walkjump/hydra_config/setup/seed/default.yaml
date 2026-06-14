@@ -1,0 +1,4 @@
+_target_: lightning.pytorch.seed_everything
+
+seed: 0xf121 #0xf1eece #0xf121 #0xf121 #start from 0xf121 to 0xf125
+workers: true

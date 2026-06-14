@@ -1,0 +1,3 @@
+[console_scripts]
+walkjump_sample = walkjump.cmdline:sample
+walkjump_train = walkjump.cmdline:train
